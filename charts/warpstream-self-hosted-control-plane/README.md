@@ -7,9 +7,11 @@
 Start by adding this repository to your Helm repositories:
 
 ```shell
-helm repo add warpstream https://warpstreamlabs.github.io/charts
+helm repo add warpstream-shcp https://warpstreamlabs.github.io/shcp
 helm repo update
 ```
+
+The [warpstream-agent](https://github.com/warpstreamlabs/charts/tree/main/charts/warpstream-agent) chart is published separately at `https://warpstreamlabs.github.io/charts`.
 
 
 ## Prerequisites
@@ -63,7 +65,7 @@ See [Configuration File](#configuration-file) for the contents of `config.cluste
 3. Install or upgrade the chart using your custom YAML file:
 
 ```shell
-helm upgrade --install warpstream-control-plane warpstream/warpstream-self-hosted-control-plane \
+helm upgrade --install warpstream-control-plane warpstream-shcp/warpstream-self-hosted-control-plane \
     --namespace $YOUR_NAMESPACE \
     -f warpstream-values.yaml
 ```
@@ -91,7 +93,7 @@ To upgrade to a new control plane release:
 
 ```shell
 helm repo update
-helm upgrade warpstream-control-plane warpstream/warpstream-self-hosted-control-plane \
+helm upgrade warpstream-control-plane warpstream-shcp/warpstream-self-hosted-control-plane \
     --namespace $YOUR_NAMESPACE \
     --reuse-values \
     --set image.tag="$YOUR_NEW_RELEASE_VERSION"
@@ -350,7 +352,7 @@ extraEnv:
 
 ### Connecting Agents
 
-Deploy agents with the [warpstream-agent](../warpstream-agent) chart and point them at the control plane Service:
+Deploy agents with the [warpstream-agent](https://github.com/warpstreamlabs/charts/tree/main/charts/warpstream-agent) chart and point them at the control plane Service:
 
 ```yaml
 config:
@@ -478,7 +480,7 @@ kubectl wait pod \
     --selector app.kubernetes.io/instance=warpstream-control-plane \
     --for=delete \
     --timeout=15m
-helm upgrade warpstream-control-plane warpstream/warpstream-self-hosted-control-plane \
+helm upgrade warpstream-control-plane warpstream-shcp/warpstream-self-hosted-control-plane \
     --namespace $YOUR_NAMESPACE \
     --values warpstream-values.yaml
 ```
