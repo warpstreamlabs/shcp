@@ -1,0 +1,20 @@
+apiVersion: v1
+entries:
+  warpstream-self-hosted-control-plane:
+  - apiVersion: v2
+    created: "2026-10-30T19:39:43.199537751Z"
+    description: WarpStream self-hosted control plane for Kubernetes.
+    digest: abec98a6323b41d23650dc458842a2b6d2cf7eebcdf16574864f3f1b58f98b04
+    home: https://docs.warpstream.com/warpstream/
+    icon: https://avatars.githubusercontent.com/u/132156278
+    maintainers:
+    - email: founders@warpstreamlabs.com
+      name: WarpStream
+    name: warpstream-self-hosted-control-plane
+    sources:
+    - https://github.com/warpstreamlabs/shcp/tree/main/charts/warpstream-self-hosted-control-plane
+    type: application
+    urls:
+    - https://github.com/warpstreamlabs/shcp/releases/download/warpstream-self-hosted-control-plane-0.2.1/warpstream-self-hosted-control-plane-0.2.1.tgz
+    version: 0.2.1
+generated: "2026-10-30T19:39:43.1995491Z"
